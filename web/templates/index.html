@@ -1,17 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Telegram Alert</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trading alert webpage</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container {
+    text-align: center;
+    color:#0000;
+  }
+
+  .interactive-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 10px;
+    transition: background-color 0.3s ease;
+    text-decoration: none; /* Remove underline from anchor */
+  }
+
+  .interactive-button:hover {
+    background-color: #0056b3;
+  }
+
+  .video-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+  }
+
+  video {
+    min-width: 100%;S
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+.logo {
+  width:180px;
+  cursor:pointer;
+  position:absolute;
+  top:0;
+  left:0;
+align-items:center;
+}
+</style>
 </head>
 <body>
-    <h1>Latest Trade Alert:</h1>
-    <p>{{ summarized_message }}</p>
-    <p>Sentiment: {{ sentiment }}</p>
+<img src="C:/Users/ELCOT/Documents/logo.png" class="logo">
+<div class="video-container">
+  <video autoplay loop muted title="Background Video">
+    <source src="C:/Users/ELCOT/Documents/trading2.mp4" type="video/mp4">
+  </video>
+</div>
+
+<div class="container">
+  <i><h1 style="font-family: poppins;color: white";>Latest Trading Alert</h1></i>
+      <p>Sentiment: {{ sentiment }}</p>
     <form action="/trigger" method="post">
         <button type="submit">Trigger Alert</button>
-    </form>
+</form>
+
+  <p><a href="https://web.telegram.org/k/#-1232792540" class="interactive-button">Redirect to Telegram</a></p>
+</div>
+
 </body>
 </html>
