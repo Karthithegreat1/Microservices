@@ -17,7 +17,7 @@ def send_to_telegram():
     return jsonify({'status': 'success'})
 
 def send_telegram_message(message):
-    telegram_url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
+    telegram_url = f"https:34.238.123.197//api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
     params = {
         'chat_id': TELEGRAM_CHANNEL_NAME,
         'text': message,
@@ -27,7 +27,7 @@ def send_telegram_message(message):
 
 def forward_to_web_page_service(message):
     # URL of the Web Page Service
-    WEB_PAGE_SERVICE_URL = 'http://18.215.248.144:8000/update_message'
+    WEB_PAGE_SERVICE_URL = 'http://34.238.123.197:8000/update_message'
     requests.post(WEB_PAGE_SERVICE_URL, data=message)
 
 if __name__ == '__main__':
